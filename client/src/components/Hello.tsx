@@ -1,12 +1,37 @@
-import { stringify } from 'querystring';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Hello() {
-	const [currentTime, setCurrentTime] = useState('');
+	const [dateTime, setDateTime] = useState('');
+	const updateClock = () => {
+		const days = [
+			'SUNDAY',
+			'MONDAY',
+			'TUESDAY',
+			'WEDNESDAY',
+			'THURSDAY',
+			'FRIDAY',
+			'SATURDAY',
+		];
 
-	setInterval(() => {
-		setCurrentTime(new Date().toLocaleString().replace(/,/g, ''));
-	}, 1000);
+		let date = new Date();
 
-	return <p className='time '>{currentTime}</p>;
+		const dateString = `
+    ${
+			days[date.getDay()]
+		} ${date.getDay()}/${date.getMonth()}/${date.getFullYear()}
+    ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}
+  `;
+
+		setTimeout(() => {
+			updateClock();
+		}, 1000);
+
+		setDateTime(dateString);
+	};
+
+	useEffect(() => {
+		updateClock();
+	}, []);
+
+	return <p className='time'>{dateTime}</p>;
 }

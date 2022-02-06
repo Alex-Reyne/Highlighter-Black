@@ -8,11 +8,8 @@ export default function ContentBox() {
 			<Hello />
 			<div className='center-content'>
 				<section className='list-box'>
-					<h1>Hello</h1>
+					<h1>ケツ &gt;</h1>
 					<div className='lists'>
-						<LinkList />
-						<LinkList />
-						<LinkList />
 						<LinkList />
 					</div>
 				</section>

@@ -5,10 +5,8 @@ type props = {
 
 export default function LinkListItem({ linkName, safeLink }: props) {
 	return (
-		<li className='link-chip'>
-			<a href={safeLink} target='_blank'>
-				{linkName}
-			</a>
-		</li>
+		<a href={safeLink} target='_blank'>
+			<li className='link-chip'>{linkName}</li>
+		</a>
 	);
 }

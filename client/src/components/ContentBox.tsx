@@ -18,7 +18,7 @@ export default function ContentBox() {
 				</section>
 			</div>
 			<form method='get' id='search' action='https://duckduckgo.com/'>
-				<input placeholder='duck duck go search' />
+				<input placeholder='duck duck go search...' />
 			</form>
 		</section>
 	);

@@ -1,22 +1,10 @@
 import LinkListItem from './LinkListItem';
 
 const links = [
-	'4chan.org/g/',
-	'4chan.org/gd/',
-	'4chan.org/gif/',
-	'4chan.org/pol/',
-	'mail.google.com',
-	'reddit.com',
-	'twitter.com',
-	'youtube.com',
-	'4chan.org/biz',
-	'binance.com/en',
-	'tradingview.com/chart',
-	'creativereyne.ca',
-	'developer.mozilla.org/en-US/docs/Web/JavaScript',
-	'github.com/Alex-Reyne',
-	'portal.saskpolytech.ca/student/Pages/default.aspx',
-	'web-prep-help.lighthouselabs.ca/',
+	'google.ca',
+	'alexreyne.me',
+	'github.com/alex-reyne',
+	'linkedin.com/in/alexanderreyne',
 ];
 
 export default function LinkList() {

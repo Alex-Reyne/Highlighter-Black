@@ -20,7 +20,9 @@ export default function ContentBox() {
 					<img src='images/2b.jpg' alt='2b-reynedrops-image' />
 				</section>
 			</div>
-			<input />
+			<form method='get' id='search' action='https://duckduckgo.com/'>
+				<input placeholder='duck duck go search' />
+			</form>
 		</section>
 	);
 }

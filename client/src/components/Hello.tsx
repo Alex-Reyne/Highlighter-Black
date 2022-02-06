@@ -1,3 +1,12 @@
+import { stringify } from 'querystring';
+import { useState } from 'react';
+
 export default function Hello() {
-	return <p className='time '>this will tell me the time</p>;
+	const [currentTime, setCurrentTime] = useState('');
+
+	setInterval(() => {
+		setCurrentTime(new Date().toLocaleString().replace(/,/g, ''));
+	}, 1000);
+
+	return <p className='time '>{currentTime}</p>;
 }

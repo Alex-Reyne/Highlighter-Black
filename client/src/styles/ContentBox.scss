@@ -63,14 +63,19 @@
 		height: 97%;
 	}
 
-	input {
-		width: 99%;
-		border: 2px solid var(--pink);
-		color: var(--white);
-		background-color: var(--black);
+	#search {
+		display: flex;
+		width: 100%;
 
-		&:focus {
-			outline: none;
+		input {
+			flex-grow: 1;
+			border: 2px solid var(--pink);
+			color: var(--white);
+			background-color: var(--black);
+
+			&:focus {
+				outline: none;
+			}
 		}
 	}
 }

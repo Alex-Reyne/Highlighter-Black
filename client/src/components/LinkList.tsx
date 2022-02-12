@@ -2,6 +2,11 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import LinkListItem from './LinkListItem';
 import { getLinks, newLink } from '../helpers/linksHelpers';
+
+interface props {
+	links: any;
+	setLinks: any;
+}
 interface link {
 	id: number;
 	name: string;
@@ -9,9 +14,7 @@ interface link {
 	user_id: number;
 }
 
-export default function LinkList() {
-	const [links, setLinks] = useState([] as any);
-
+export default function LinkList({ links, setLinks }: props) {
 	useEffect(() => {
 		getLinks(setLinks);
 	}, []);
@@ -23,16 +26,5 @@ export default function LinkList() {
 		return <LinkListItem key={id} linkName={linkName} safeLink={safeLink} />;
 	});
 
-	return (
-		<ul className='link-list'>
-			{linkList}
-			<button
-				onClick={e => {
-					newLink(setLinks);
-				}}
-			>
-				hello
-			</button>
-		</ul>
-	);
+	return <ul className='link-list'>{linkList}</ul>;
 }

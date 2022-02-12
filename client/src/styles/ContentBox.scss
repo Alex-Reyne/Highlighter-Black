@@ -26,8 +26,23 @@
 		background-color: var(--slateOpaque);
 		border: 2px solid var(--pink);
 
+		button {
+			border: none;
+			color: var(--pink);
+			background-color: var(--black);
+			padding: 0.25rem;
+			font-family: $lato;
+			font-weight: bolder;
+			min-width: 8rem;
+			border-radius: 0.25rem;
+
+			&:hover {
+				background-color: var(--blackOpaque);
+			}
+		}
+
 		h1 {
-			margin: 0 0 1rem 0;
+			margin: 0 0 0rem 0;
 			color: var(--pink);
 		}
 
@@ -63,6 +78,7 @@
 						border-radius: 0.25rem;
 						padding: 0.25rem 0.5rem;
 						margin: 0.25rem 0.25rem;
+						min-width: 4rem;
 						&:hover {
 							background-color: var(--pink);
 							color: var(--black);

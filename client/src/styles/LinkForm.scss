@@ -1,0 +1,29 @@
+@import 'variables.scss';
+
+.linkform input {
+	flex-grow: 1;
+	border: 2px solid var(--pink);
+	color: var(--white);
+	background-color: var(--black);
+	margin: 0 0.25rem 0.5rem 0.25rem;
+	// padding: 0.15rem;
+	&:focus {
+		outline: none;
+	}
+}
+
+.linkform button {
+	border: none;
+	color: var(--pink);
+	background-color: var(--black);
+	padding: 0.25rem;
+	margin: 0 0.25rem 0 0.25rem;
+	font-family: $lato;
+	font-weight: bolder;
+	min-width: 8rem;
+	border-radius: 0.25rem;
+
+	&:hover {
+		background-color: var(--blackOpaque);
+	}
+}

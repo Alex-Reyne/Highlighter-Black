@@ -9,7 +9,7 @@ const getLinks = async set => {
 	}
 };
 
-const newLink = set => {
+const newLink = (set, data) => {
 	axios
 		.post(`/api/users/newlink`, {
 			name: `hello`,

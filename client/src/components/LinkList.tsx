@@ -1,26 +1,31 @@
 import LinkListItem from './LinkListItem';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 
-const links = [
-	{
-		name: 'google',
-		url: 'google.ca',
-	},
-	{
-		name: 'portfolio',
-		url: 'alexreyne.me',
-	},
-	{
-		name: 'github',
-		url: 'github.com/alex-reyne',
-	},
-	{
-		name: 'linkedin',
-		url: 'linkedin.com/in/alexanderreyne',
-	},
-];
+interface link {
+	name: string;
+	url: string;
+}
 
 export default function LinkList() {
-	const linkList = links.map(link => {
+	const [links, setLinks] = useState([]);
+
+	useEffect(() => {
+		async function getLinks() {
+			await axios
+				.get(`/api/users/1/links`)
+				.then(res => {
+					setLinks(res.data);
+				})
+				.catch(err => {
+					console.log(err);
+				});
+		}
+
+		getLinks();
+	}, [links]);
+
+	const linkList = links.map((link: link) => {
 		const linkName = link.name;
 		const safeLink = `https://${link.url}`;
 		return (

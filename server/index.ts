@@ -1,5 +1,7 @@
 import express, { Request, Response } from 'express';
+const cors = require('cors');
 require('dotenv').config();
+const app = express();
 
 // Declaration merging for TS types
 declare module 'express-serve-static-core' {
@@ -11,8 +13,10 @@ declare module 'express-serve-static-core' {
 import './helpers/user_helpers';
 import pg from 'pg';
 
-const app = express();
 app.use(express.json());
+app.use(cors());
+
+// Server port
 const PORT = process.env.PORT;
 
 // Separated Routes for each Resource
@@ -25,4 +29,4 @@ app.get('/', (req: Request, res: Response) => {
 	res.json({ message: 'BRUH' });
 });
 
-app.listen(PORT || 3001, () => console.log(`I'm listening bro`));
+app.listen(PORT || 3001, () => console.log(`I'm listening bro. PORT: ${PORT}`));

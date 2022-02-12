@@ -1,6 +1,7 @@
 import express, { Request, Response } from 'express';
 const cors = require('cors');
 require('dotenv').config();
+
 const app = express();
 
 // Declaration merging for TS types

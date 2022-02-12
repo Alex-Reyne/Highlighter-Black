@@ -1,7 +1,6 @@
 import express, { Request, Response } from 'express';
 import { getUsers, getUserById, newUser } from '../helpers/user_helpers';
 import { getLinks, addLink } from '../helpers/links_helpers';
-import { getImage, addImage } from '../helpers/image_helpers';
 const router = express.Router();
 interface err {
 	message: string;
@@ -60,32 +59,6 @@ router.post('/newlink', (req: Request, res: Response) => {
 	addLink(req.body)
 		.then((link: JSON) => {
 			res.send(link);
-		})
-		.catch((err: any) =>
-			res.json({
-				error: err.message,
-			})
-		);
-});
-
-// Image Upload Routes
-router.post('/image', (req: Request, res: Response) => {
-	addImage(req.body)
-		.then((image: JSON) => {
-			res.send(image);
-		})
-		.catch((err: any) =>
-			res.json({
-				error: err.message,
-			})
-		);
-});
-
-// Image Get Routes
-router.get('/:user_id/image', (req: Request, res: Response) => {
-	getImage(Number(req.params.user_id))
-		.then((image: JSON) => {
-			res.json(image);
 		})
 		.catch((err: any) =>
 			res.json({

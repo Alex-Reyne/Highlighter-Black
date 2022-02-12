@@ -22,7 +22,11 @@ export default function LinkList({ links, setLinks }: props) {
 	const linkList = links.map((link: link) => {
 		const { name, url, id } = link;
 		const linkName = name;
-		const safeLink = `https://${url}`;
+		let safeLink = ``;
+		url.includes('http')
+			? (safeLink = `${url}`)
+			: (safeLink = `https://${url}`);
+
 		return <LinkListItem key={id} linkName={linkName} safeLink={safeLink} />;
 	});
 

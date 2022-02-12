@@ -31,7 +31,7 @@ const addLink = (link: link) => {
 	return db
 		.query(query)
 		.then((result: result) => {
-			return result;
+			return result.rows;
 		})
 		.catch((err: object) => console.log(err));
 };

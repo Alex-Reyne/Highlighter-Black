@@ -59,7 +59,7 @@ router.post('/newuser', (req: Request, res: Response) => {
 router.post('/newlink', (req: Request, res: Response) => {
 	addLink(req.body)
 		.then((link: any) => {
-			console.log(link);
+			res.send(link);
 		})
 		.catch((err: any) =>
 			res.json({

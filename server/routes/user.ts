@@ -1,6 +1,6 @@
 import express, { Request, Response } from 'express';
-import { getUsers, getUserById } from '../helpers/user_helpers';
-import { getLinks } from '../helpers/links_helpers';
+import { getUsers, getUserById, newUser } from '../helpers/user_helpers';
+import { getLinks, addLink } from '../helpers/links_helpers';
 const router = express.Router();
 
 interface err {
@@ -34,6 +34,32 @@ router.get('/:id/links', (req: Request, res: Response) => {
 	getLinks(req.params.id)
 		.then((links: any) => {
 			res.json(links);
+		})
+		.catch((err: any) =>
+			res.json({
+				error: err.message,
+			})
+		);
+});
+
+// Add new user
+router.post('/newuser', (req: Request, res: Response) => {
+	newUser(req.body)
+		.then((user: any) => {
+			console.log(user);
+		})
+		.catch((err: any) =>
+			res.json({
+				error: err.message,
+			})
+		);
+});
+
+// Add new user
+router.post('/newlink', (req: Request, res: Response) => {
+	addLink(req.body)
+		.then((link: any) => {
+			console.log(link);
 		})
 		.catch((err: any) =>
 			res.json({

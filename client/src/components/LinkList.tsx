@@ -7,23 +7,29 @@ interface link {
 	url: string;
 }
 
+interface res {
+	rows: Array<{}>;
+}
+
 export default function LinkList() {
 	const [links, setLinks] = useState([]);
 
-	useEffect(() => {
-		async function getLinks() {
-			await axios
-				.get(`/api/users/1/links`)
-				.then(res => {
-					setLinks(res.data);
-				})
-				.catch(err => {
-					console.log(err);
-				});
-		}
+	async function getLinks() {
+		// console.log(links);
 
+		await axios
+			.get(`/api/users/1/links`)
+			.then(res => {
+				setLinks(res.data);
+			})
+			.catch(err => {
+				console.log(err);
+			});
+	}
+
+	useEffect(() => {
 		getLinks();
-	}, [links]);
+	}, []);
 
 	const linkList = links.map((link: link) => {
 		const linkName = link.name;
@@ -33,5 +39,25 @@ export default function LinkList() {
 		);
 	});
 
-	return <ul className='link-list'>{linkList}</ul>;
+	const newLink = () => {
+		axios
+			.post(`/api/users/newlink`, {
+				name: `hello`,
+				url: `alexreyne.me`,
+				user_id: 1,
+			})
+			.then(res => {
+				return getLinks();
+			})
+			.catch(err => {
+				console.log(err);
+			});
+	};
+
+	return (
+		<ul className='link-list'>
+			{linkList}
+			<button onClick={newLink}>hello</button>
+		</ul>
+	);
 }

@@ -5,4 +5,4 @@ CREATE TABLE "links" (
   "name" VARCHAR(15) NOT NULL,
   "url" VARCHAR(255) NOT NULL,
   "user_id" INTEGER REFERENCES users(id) ON DELETE CASCADE
-  );
+);

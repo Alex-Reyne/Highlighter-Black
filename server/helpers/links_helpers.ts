@@ -36,4 +36,21 @@ const addLink = (link: link) => {
 		.catch((err: object) => console.log(err));
 };
 
-export { getLinks, addLink };
+const deleteLink = (id: number) => {
+	console.log(id);
+	const query = {
+		text: `DELETE FROM links
+		WHERE id = $1
+		RETURNING *`,
+		values: [id],
+	};
+
+	return db
+		.query(query)
+		.then((result: result) => {
+			return result.rows;
+		})
+		.catch((err: object) => console.log(err));
+};
+
+export { getLinks, addLink, deleteLink };

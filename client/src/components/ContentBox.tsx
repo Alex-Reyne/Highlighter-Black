@@ -8,7 +8,12 @@ import { newLink } from '../helpers/linksHelpers';
 import { getImage, submitImage } from '../helpers/imageHelpers';
 import LinkForm from './LinkForm';
 
-export default function ContentBox() {
+interface props {
+	edit: boolean;
+	setEdit: any;
+}
+
+export default function ContentBox({ edit, setEdit }: props) {
 	const [links, setLinks] = useState([] as any);
 	const [add, setAdd] = useState(false);
 	const [addForm, setAddForm] = useState({} as any);
@@ -27,15 +32,29 @@ export default function ContentBox() {
 				<section className='list-box'>
 					<h1>ケツ &gt;</h1>
 					<div className='lists'>
-						<LinkList links={links} setLinks={setLinks} />
+						<LinkList
+							links={links}
+							setLinks={setLinks}
+							edit={edit}
+							setEdit={setEdit}
+						/>
 					</div>
-					{add === false && (
+					{add === false && edit === false && (
 						<button
 							onClick={e => {
 								setAdd(true);
 							}}
 						>
 							New Link
+						</button>
+					)}
+					{edit === true && (
+						<button
+							onClick={e => {
+								setEdit(false);
+							}}
+						>
+							Done Editing
 						</button>
 					)}
 					{add === true && (

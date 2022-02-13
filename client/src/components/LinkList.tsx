@@ -6,6 +6,8 @@ import { getLinks, newLink } from '../helpers/linksHelpers';
 interface props {
 	links: any;
 	setLinks: any;
+	edit: boolean;
+	setEdit: any;
 }
 interface link {
 	id: number;
@@ -14,7 +16,7 @@ interface link {
 	user_id: number;
 }
 
-export default function LinkList({ links, setLinks }: props) {
+export default function LinkList({ links, setLinks, edit, setEdit }: props) {
 	useEffect(() => {
 		getLinks(setLinks);
 	}, []);
@@ -27,7 +29,16 @@ export default function LinkList({ links, setLinks }: props) {
 			? (safeLink = `${url}`)
 			: (safeLink = `https://${url}`);
 
-		return <LinkListItem key={id} linkName={linkName} safeLink={safeLink} />;
+		return (
+			<LinkListItem
+				key={id}
+				id={id}
+				linkName={linkName}
+				safeLink={safeLink}
+				edit={edit}
+				setEdit={setEdit}
+			/>
+		);
 	});
 
 	return <ul className='link-list'>{linkList}</ul>;

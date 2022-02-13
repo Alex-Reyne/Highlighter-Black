@@ -30,4 +30,4 @@ app.get('/', (req: Request, res: Response) => {
 	res.json({ message: 'BRUH' });
 });
 
-app.listen(PORT || 3001, () => console.log(`I'm listening bro. PORT: ${PORT}`));
+app.listen(PORT || 5001, () => console.log(`I'm listening bro. PORT: ${PORT}`));

@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const getLinks = async set => {
 	try {
-		const res = await axios.get(`/api/users/1/links`);
+		const res = await axios.get(`http://localhost:5001/api/users/1/links`);
 		set(prev => [...res.data]);
 	} catch (err) {
 		console.log(err);
@@ -11,7 +11,7 @@ const getLinks = async set => {
 
 const newLink = (set, addForm) => {
 	axios
-		.post(`/api/users/newlink`, {
+		.post(`http://localhost:5001/api/users/newlink`, {
 			name: `${addForm.name}`,
 			url: `${addForm.url}`,
 			user_id: 1,

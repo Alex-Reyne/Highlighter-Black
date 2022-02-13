@@ -5,7 +5,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: flex-start;
-	height: 30vh;
+	min-height: 35vh;
 	width: 35vw;
 
 	.time {
@@ -102,6 +102,8 @@
 		background-color: var(--pink);
 		height: 97%;
 		object-fit: cover;
+		overflow: hidden;
+		max-width: 10rem;
 	}
 
 	#search {
@@ -118,5 +120,9 @@
 				outline: none;
 			}
 		}
+	}
+
+	#file-input {
+		display: none;
 	}
 }

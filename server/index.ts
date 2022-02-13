@@ -33,7 +33,8 @@ app.get('/', (req: Request, res: Response) => {
 
 app.listen(PORT || 5001, () => {
 	console.log(`I'm listening bro. PORT: ${PORT}`)
-	// setInterval(function() {
-  //   http.get("https://highlighter-black.herokuapp.com/");
-	// }, 300000); // every 5 minutes (300000)
 });
+
+setInterval(function() {
+	http.get("https://highlighter-black.herokuapp.com/");
+}, 300000); // every 5 minutes (300000)

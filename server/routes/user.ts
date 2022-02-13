@@ -5,7 +5,7 @@ import {
 	newUser,
 	updateUserImage,
 } from '../helpers/user_helpers';
-import { getLinks, addLink } from '../helpers/links_helpers';
+import { getLinks, addLink, deleteLink } from '../helpers/links_helpers';
 const router = express.Router();
 interface err {
 	message: string;
@@ -62,6 +62,19 @@ router.post('/newuser', (req: Request, res: Response) => {
 // Add new Link
 router.post('/newlink', (req: Request, res: Response) => {
 	addLink(req.body)
+		.then((link: JSON) => {
+			res.send(link);
+		})
+		.catch((err: any) =>
+			res.json({
+				error: err.message,
+			})
+		);
+});
+
+// Delete Link
+router.post('/deletelink/:id', (req: Request, res: Response) => {
+	deleteLink(req.params.id)
 		.then((link: JSON) => {
 			res.send(link);
 		})

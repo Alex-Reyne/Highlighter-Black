@@ -11,7 +11,9 @@ type props = {
 export default function LinkListItem({ linkName, safeLink, edit, id }: props) {
 	const deleteLink = () => {
 		axios
-			.post(`http://localhost:5001/api/users/deletelink/${id}`)
+			.post(
+				`https://highlighter-black.herokuapp.com/api/users/deletelink/${id}`
+			)
 			.then(res => console.log(res))
 			.catch(err => console.log(err));
 	};

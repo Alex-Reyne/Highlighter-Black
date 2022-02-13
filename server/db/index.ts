@@ -5,6 +5,7 @@ const initConnectionString = `postgres://${process.env.DB_USER}:${process.env.DB
 
 const initClient = new pg.Client({
 	connectionString: initConnectionString || process.env.DATABASE_URL,
+	ssl: { rejectUnauthorized: false },
 });
 
 console.log(`Connected to ${process.env.DB_NAME} on ${process.env.DB_HOST}`);

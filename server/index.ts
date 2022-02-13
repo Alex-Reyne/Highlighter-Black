@@ -1,5 +1,6 @@
 import express, { Request, Response } from 'express';
 const cors = require('cors');
+const http = require("http");
 require('dotenv').config();
 
 const app = express();
@@ -30,4 +31,9 @@ app.get('/', (req: Request, res: Response) => {
 	res.json({ message: 'BRUH' });
 });
 
-app.listen(PORT || 5001, () => console.log(`I'm listening bro. PORT: ${PORT}`));
+app.listen(PORT || 5001, () => {
+	console.log(`I'm listening bro. PORT: ${PORT}`)
+	setInterval(function() {
+    http.get("https://highlighter-black.herokuapp.com/");
+	}, 300000); // every 5 minutes (300000)
+});

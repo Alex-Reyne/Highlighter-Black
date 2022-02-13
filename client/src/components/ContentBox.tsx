@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 import '../styles/ContentBox.scss';
@@ -11,25 +11,41 @@ export default function ContentBox() {
 	const [links, setLinks] = useState([] as any);
 	const [add, setAdd] = useState(false);
 	const [addForm, setAddForm] = useState({} as any);
+	const [image, setImage] = useState('');
 
-	let imgURL: string = '';
+	async function getImage() {
+		await axios
+			.get('/api/users/1')
+			.then(res => {
+				const { image_url } = res.data;
+				setImage(image_url);
+			})
+			.catch(err => console.log(err));
+	}
+
+	useEffect(() => {
+		getImage();
+	}, []);
+
+	const { REACT_APP_IMGBB } = process.env;
 
 	async function submitImage(e: any) {
 		const data = new FormData();
-		data.append('image', e.target.files);
-		const config = {
-			headers: {
-				'Content-type': 'application/x-www-form-urlencoded',
-				Authorization: `Client-ID ${process.env.IMGUR_ID}`,
-			},
-		};
+		data.append('image', e.target.files[0]);
 
-		await axios
-			.post(`https://api.imgur.com/3/image`, data, config)
+		return axios({
+			method: 'post',
+			url: `https://api.imgbb.com/1/upload?key=${REACT_APP_IMGBB}`,
+			data: data,
+		})
 			.then(res => {
-				console.log(data);
-				console.log(res);
-				// imgURL = res.data.link;
+				const url = res.data.data.display_url;
+				axios
+					.post('/api/users/1/newimage', {
+						id: 1,
+						image_url: url,
+					})
+					.then(res2 => setImage(url));
 			})
 			.catch(e => console.log(e));
 	}
@@ -64,7 +80,7 @@ export default function ContentBox() {
 				</section>
 				<section>
 					<label htmlFor='file-input'>
-						<img src={imgURL} alt='2b-reynedrops-image' />
+						<img id='img' src={image} alt='user_image' />
 					</label>
 
 					<input id='file-input' type='file' onChange={e => submitImage(e)} />

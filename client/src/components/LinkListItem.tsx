@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { getLinks } from '../helpers/linksHelpers';
 
 type props = {
 	id: number;
@@ -6,15 +7,22 @@ type props = {
 	safeLink: string;
 	edit: boolean;
 	setEdit?: any;
+	setLinks: any;
 };
 
-export default function LinkListItem({ linkName, safeLink, edit, id }: props) {
+export default function LinkListItem({
+	linkName,
+	safeLink,
+	edit,
+	id,
+	setLinks,
+}: props) {
 	const deleteLink = () => {
 		axios
 			.post(
 				`https://highlighter-black.herokuapp.com/api/users/deletelink/${id}`
 			)
-			.then(res => console.log(res))
+			.then(res => getLinks(setLinks))
 			.catch(err => console.log(err));
 	};
 

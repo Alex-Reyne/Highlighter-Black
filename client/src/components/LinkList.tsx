@@ -37,6 +37,7 @@ export default function LinkList({ links, setLinks, edit, setEdit }: props) {
 				safeLink={safeLink}
 				edit={edit}
 				setEdit={setEdit}
+				setLinks={setLinks}
 			/>
 		);
 	});

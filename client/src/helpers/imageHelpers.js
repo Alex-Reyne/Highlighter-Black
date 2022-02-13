@@ -12,7 +12,7 @@ async function submitImage(e, setImage, key) {
 		.then(res => {
 			const url = res.data.data.display_url;
 			axios
-				.post('http://localhost:5001/api/users/1/newimage', {
+				.post('https://highlighter-black.herokuapp.com/api/users/1/newimage', {
 					id: 1,
 					image_url: url,
 				})
@@ -23,7 +23,7 @@ async function submitImage(e, setImage, key) {
 
 async function getImage(setImage) {
 	await axios
-		.get('http://localhost:5001/api/users/1')
+		.get('https://highlighter-black.herokuapp.com/api/users/1')
 		.then(res => {
 			const { image_url } = res.data;
 			setImage(image_url);

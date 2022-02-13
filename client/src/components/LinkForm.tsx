@@ -2,10 +2,10 @@ import '../styles/LinkForm.scss';
 
 interface props {
 	addForm: any;
+	setAddForm: any;
 	setAdd: any;
 	newLink: any;
 	setLinks: any;
-	setAddForm: any;
 }
 
 export default function LinkForm({

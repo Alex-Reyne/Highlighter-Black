@@ -1,15 +1,12 @@
 {
 	"short_name": "HB",
 	"name": "Highlighter Black",
-	"start_url": ".",
-	"display": "standalone",
-	"theme_color": "#000000",
-	"background_color": "#ffffff",
 	"description": "Overrides the new tab page",
 	"version": "0.1",
 	"incognito": "split",
 	"chrome_url_overrides": {
 		"newtab": "index.html"
 	},
+	"permissions": ["http://localhost:5001/*"],
 	"manifest_version": 2
 }

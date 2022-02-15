@@ -1,1 +1,1 @@
-worker: node index.js
+worker: nodemon index.ts --ignore client

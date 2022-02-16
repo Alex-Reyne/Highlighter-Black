@@ -12,8 +12,8 @@ async function submitImage(e, setImage, key) {
     .then(async (res) => {
       const url = res.data.data.url;
       await axios
-        .post('https://highlighter-black.herokuapp.com/api/users/2/newimage', {
-          id: 2,
+        .post('https://highlighter-black.herokuapp.com/api/users/1/newimage', {
+          id: 1,
           image_url: url,
         })
         .then((res2) => setImage(url));
@@ -23,7 +23,7 @@ async function submitImage(e, setImage, key) {
 
 async function getImage(setImage) {
   await axios
-    .get('https://highlighter-black.herokuapp.com/api/users/2')
+    .get('https://highlighter-black.herokuapp.com/api/users/1')
     .then((res) => {
       const { image_url } = res.data;
       setImage(image_url);
@@ -31,16 +31,4 @@ async function getImage(setImage) {
     .catch((err) => console.log(err));
 }
 
-const resetImage = (setImage) => {
-  console.log('in reset IMAGE HELPER FRONTEND');
-  const url = `https://i.ibb.co/zmJypD9/stars.gif`;
-  axios
-    .post('https://highlighter-black.herokuapp.com/api/users/2/newimage', {
-      id: 2,
-      image_url: url,
-    })
-    .then((res2) => setImage(url))
-    .catch((err) => console.log(err));
-};
-
-export { getImage, submitImage, resetImage };
+export { getImage, submitImage };

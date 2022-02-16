@@ -67,7 +67,7 @@ const resetLinks = (id: number) => {
 		('Portfolio', 'alexreyne.me', $1),
 		('GitHub', 'github.com/alex-reyne', $1),
 		('LinkedIn', 'linkedin.com/in/alexanderreyne', $1),
-		('Resume', 'https://drive.google.com/file/d/1rvrY8h93EFONuJnC_6eURYJscZSnOp1V/view', $1),
+		('Resume', 'https://drive.google.com/file/d/1rvrY8h93EFONuJnC_6eURYJscZSnOp1V/view', $1)
 		`,
     values: [id],
   };

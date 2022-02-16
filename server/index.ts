@@ -23,6 +23,8 @@ const PORT = process.env.PORT;
 
 // Separated Routes for each Resource
 import userRouter from './routes/user';
+import { resetLinks } from './helpers/links_helpers';
+import { updateUserImage } from './helpers/user_helpers';
 
 // Mount all resource routes
 app.use('/api/users', userRouter);
@@ -61,4 +63,10 @@ const interval = {
   },
 };
 
-// interval.make(() => {}, 30 * 60000);
+const user = { id: 2, image_url: 'https://i.ibb.co/zmJypD9/stars.gif' };
+
+interval.clearAll();
+interval.make(() => {
+  updateUserImage(user);
+  resetLinks(2);
+}, 20 * 1000);

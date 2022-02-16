@@ -79,8 +79,8 @@ export default function ContentBox({ edit, setEdit }: props) {
 					/>
 				</section>
 			</div>
-			<form method='get' id='search' action='https://duckduckgo.com/'>
-				<input placeholder='duck duck go search...' />
+			<form id='search' name="form1" action="https://duckduckgo.com/?q=" target="_blank" method="get" >
+				<input type="text" placeholder="Duck Duck Go Search..." name="q" />
 			</form>
 		</section>
 	);

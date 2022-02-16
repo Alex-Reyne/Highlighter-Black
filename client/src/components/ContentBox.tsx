@@ -89,13 +89,7 @@ export default function ContentBox({ edit, setEdit, loading, setLoading }: props
               />
             </section>
           </div>
-          <form
-            id="search"
-            name="form1"
-            action="https://duckduckgo.com/?q="
-            target="_blank"
-            method="get"
-          >
+          <form id="search" name="form1" action="https://duckduckgo.com/?q=" method="get">
             <input type="text" placeholder="Duck Duck Go Search..." name="q" />
           </form>
         </>

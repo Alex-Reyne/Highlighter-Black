@@ -54,7 +54,6 @@ const deleteLink = (id: number) => {
 };
 
 const resetLinks = (id: number) => {
-  console.log(id);
   const q1 = {
     text: `DELETE FROM links
 		WHERE user_id = $1

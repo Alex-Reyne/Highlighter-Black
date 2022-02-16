@@ -35,11 +35,9 @@ export default function LinkForm({ addForm, newLink, setAdd, setLinks, setAddFor
           />
         </div>
         <button
-          onClick={async (e) => {
-            await newLink(setLinks, addForm).then(() => {
-              setAddForm({});
-              setAdd(false);
-            });
+          onClick={(e) => {
+            newLink(setLinks, addForm);
+            setAdd(false);
           }}
         >
           Add Link

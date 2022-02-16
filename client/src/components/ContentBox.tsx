@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 import '../styles/ContentBox.scss';
 import Hello from './Hello';
 import LinkList from './LinkList';
-import { newLink, resetLinks } from '../helpers/linksHelpers';
-import { getImage, submitImage, resetImage } from '../helpers/imageHelpers';
+import { newLink } from '../helpers/linksHelpers';
+import { getImage, submitImage } from '../helpers/imageHelpers';
 import LinkForm from './LinkForm';
 
 interface props {
@@ -37,11 +37,6 @@ export default function ContentBox({ edit, setEdit, loading, setLoading }: props
   }, []);
 
   const { REACT_APP_IMGBB } = process.env;
-
-  const reset = (e: any) => {
-    e.preventDefault();
-    e.target.reset();
-  };
 
   return (
     <section className="main-content">
@@ -100,7 +95,6 @@ export default function ContentBox({ edit, setEdit, loading, setLoading }: props
             action="https://duckduckgo.com/?q="
             target="_blank"
             method="get"
-            onSubmit={(e) => reset(e)}
           >
             <input type="text" placeholder="Duck Duck Go Search..." name="q" />
           </form>

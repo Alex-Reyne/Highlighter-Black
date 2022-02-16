@@ -46,7 +46,7 @@ export default function ContentBox({ edit, setEdit, loading, setLoading }: props
     console.log('in links useEffect');
     const timer = setInterval(() => {
       resetLinks(setLinks);
-    }, 10000);
+    }, 30 * 60000);
 
     return () => clearInterval(timer);
   }, []);

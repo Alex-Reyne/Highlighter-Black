@@ -4,15 +4,15 @@ async function submitImage(e, setImage, key) {
 	const data = new FormData();
 	data.append('image', e.target.files[0]);
 
-	return axios({
+	await axios({
 		method: 'post',
 		url: `https://api.imgbb.com/1/upload?key=${key}`,
 		data: data,
 	})
-		.then(res => {
+		.then(async (res) => {
 			console.log(res)
-			const url = res.data.data.url;
-			axios
+			const url = res.data.data.image.url;
+			await axios
 				.post('https://highlighter-black.herokuapp.com/api/users/1/newimage', {
 					id: 1,
 					image_url: url,

@@ -12,8 +12,8 @@ async function submitImage(e, setImage, key) {
     .then(async (res) => {
       const url = res.data.data.url;
       await axios
-        .post('https://highlighter-black.herokuapp.com/api/users/1/newimage', {
-          id: 1,
+        .post('https://highlighter-black.herokuapp.com/api/users/2/newimage', {
+          id: 2,
           image_url: url,
         })
         .then((res2) => setImage(url));
@@ -23,7 +23,7 @@ async function submitImage(e, setImage, key) {
 
 async function getImage(setImage) {
   await axios
-    .get('https://highlighter-black.herokuapp.com/api/users/1')
+    .get('https://highlighter-black.herokuapp.com/api/users/2')
     .then((res) => {
       const { image_url } = res.data;
       setImage(image_url);

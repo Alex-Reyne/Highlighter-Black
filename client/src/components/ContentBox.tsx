@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import '../styles/ContentBox.scss';
 import Hello from './Hello';
 import LinkList from './LinkList';
-import { newLink } from '../helpers/linksHelpers';
+import { newLink, resetLinks } from '../helpers/linksHelpers';
 import { getImage, submitImage, resetImage } from '../helpers/imageHelpers';
 import LinkForm from './LinkForm';
 
@@ -38,6 +38,15 @@ export default function ContentBox({ edit, setEdit, loading, setLoading }: props
     const timer = setInterval(() => {
       resetImage(setImage);
     }, 30 * 60000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    console.log('in links useEffect');
+    const timer = setInterval(() => {
+      resetLinks(setLinks);
+    }, 10000);
 
     return () => clearInterval(timer);
   }, []);

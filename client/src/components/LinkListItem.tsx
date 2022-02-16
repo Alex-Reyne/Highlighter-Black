@@ -1,6 +1,5 @@
 import axios from 'axios';
-import { useEffect } from 'react';
-import { getLinks, resetLinks } from '../helpers/linksHelpers';
+import { getLinks } from '../helpers/linksHelpers';
 
 type props = {
   id: number;
@@ -18,15 +17,6 @@ export default function LinkListItem({ linkName, safeLink, edit, id, setLinks }:
       .then((res) => getLinks(setLinks))
       .catch((err) => console.log(err));
   };
-
-  useEffect(() => {
-    console.log('in links useEffect');
-    const timer = setInterval(() => {
-      resetLinks(setLinks);
-    }, 10000);
-
-    return () => clearInterval(timer);
-  }, []);
 
   return (
     <>

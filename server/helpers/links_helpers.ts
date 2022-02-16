@@ -54,7 +54,10 @@ const deleteLink = (id: number) => {
 };
 
 const resetLinks = (id: number) => {
+<<<<<<< HEAD
   console.log(id);
+=======
+>>>>>>> production
   const q1 = {
     text: `DELETE FROM links
 		WHERE user_id = $1
@@ -67,7 +70,11 @@ const resetLinks = (id: number) => {
 		('Portfolio', 'alexreyne.me', $1),
 		('GitHub', 'github.com/alex-reyne', $1),
 		('LinkedIn', 'linkedin.com/in/alexanderreyne', $1),
+<<<<<<< HEAD
 		('Resume', 'https://drive.google.com/file/d/1rvrY8h93EFONuJnC_6eURYJscZSnOp1V/view', $1),
+=======
+		('Resume', 'https://drive.google.com/file/d/1rvrY8h93EFONuJnC_6eURYJscZSnOp1V/view', $1)
+>>>>>>> production
 		`,
     values: [id],
   };

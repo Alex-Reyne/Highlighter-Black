@@ -17,6 +17,13 @@ body {
   font-family: Roboto;
 }
 
+#error {
+  color: #ff0000c8;
+  border: 2px solid #ff0000c8;
+  background-color: #ff000047;
+  padding: 1rem;
+}
+
 #edit {
   position: absolute;
   z-index: 999;

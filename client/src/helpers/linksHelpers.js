@@ -27,7 +27,7 @@ const newLink = (set, addForm) => {
 const resetLinks = (set) => {
   const id = 2;
   axios
-    .post(`https://highlighter-black.herokuapp.com/api/users/deletelink/${id}`)
+    .post(`https://highlighter-black.herokuapp.com/api/users/resetLinks/${id}`)
     .then((res) => getLinks(set))
     .catch((err) => console.log(err));
 };

@@ -43,8 +43,6 @@ export default function ContentBox({ edit, setEdit, loading, setLoading }: props
     }, 1 * 60000);
 
     return () => {
-      resetImage(setImage);
-      resetLinks(setLinks);
       clearInterval(timer);
     };
   }, [image, links]);

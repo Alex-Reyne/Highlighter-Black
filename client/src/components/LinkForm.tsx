@@ -37,6 +37,7 @@ export default function LinkForm({ addForm, newLink, setAdd, setLinks, setAddFor
         <button
           onClick={(e) => {
             newLink(setLinks, addForm);
+            setAddForm({});
             setAdd(false);
           }}
         >

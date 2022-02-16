@@ -34,12 +34,14 @@ export default function ContentBox({ edit, setEdit, loading, setLoading }: props
         }, 1000);
       })
       .catch(console.error);
-  }, []);
 
-  // setInterval(() => {
-  //   console.log('in reset IMAGE useEFFECT FRONTEND');
-  //   resetImage(setImage);
-  // }, 30 * 60000);
+    const timer = setInterval(() => {
+      console.log('in reset IMAGE useEFFECT FRONTEND');
+      resetImage(setImage);
+    }, 10000);
+
+    return () => clearInterval(timer);
+  }, []);
 
   const { REACT_APP_IMGBB } = process.env;
 

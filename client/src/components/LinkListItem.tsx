@@ -20,6 +20,7 @@ export default function LinkListItem({ linkName, safeLink, edit, id, setLinks }:
   };
 
   useEffect(() => {
+    console.log('in links useEffect');
     const timer = setInterval(() => {
       resetLinks(setLinks);
     }, 10000);

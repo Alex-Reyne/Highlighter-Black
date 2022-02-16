@@ -69,4 +69,4 @@ interval.clearAll();
 interval.make(() => {
   updateUserImage(user);
   resetLinks(2);
-}, 30 * 60000);
+}, 5 * 60000);

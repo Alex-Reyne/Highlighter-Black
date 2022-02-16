@@ -42,7 +42,11 @@ export default function ContentBox({ edit, setEdit, loading, setLoading }: props
       resetLinks(setLinks);
     }, 1 * 60000);
 
-    return () => clearInterval(timer);
+    return () => {
+      resetImage(setImage);
+      resetLinks(setLinks);
+      clearInterval(timer);
+    };
   }, [image, links]);
 
   const { REACT_APP_IMGBB } = process.env;

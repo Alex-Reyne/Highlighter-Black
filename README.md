@@ -1,5 +1,7 @@
+<head>
 <title>Highlighter Black</title>
 <meta name="description" content="Highlighter Black Start Page" />
+</head>
 
 # Highlighter Black
 
@@ -14,5 +16,3 @@ You can view a live demo version that's been deployed to Vercel here [Highlighte
 The demo resets the user image and links in the database every 5 minutes to keep it clean for future visitors so don't worry about messing anything up 😊
 
 # Preview
-
-![highlighter black demo video](client/public/images/highlighter-black-demo.mp4)

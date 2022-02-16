@@ -19,12 +19,10 @@ export default function LinkListItem({ linkName, safeLink, edit, id, setLinks }:
       .catch((err) => console.log(err));
   };
 
-  useEffect(() => {
-    setTimeout(() => {
-      console.log('in links reset USE EFFECT FRONTEND');
-      resetLinks(setLinks);
-    }, 10000);
-  }, []);
+  setTimeout(() => {
+    console.log('in links reset USE EFFECT FRONTEND');
+    resetLinks(setLinks);
+  }, 10000);
 
   return (
     <>

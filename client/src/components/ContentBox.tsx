@@ -11,14 +11,15 @@ import LinkForm from './LinkForm';
 interface props {
   edit: boolean;
   setEdit: any;
+  loading: boolean;
+  setLoading: any;
 }
 
-export default function ContentBox({ edit, setEdit }: props) {
+export default function ContentBox({ edit, setEdit, loading, setLoading }: props) {
   const [links, setLinks] = useState([] as any);
   const [add, setAdd] = useState(false);
   const [addForm, setAddForm] = useState({} as any);
   const [image, setImage] = useState('');
-  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     setLoading(true);
@@ -40,8 +41,6 @@ export default function ContentBox({ edit, setEdit }: props) {
 
   return (
     <section className="main-content">
-      {/* {loading && <h1 className="loading">Loading...</h1>} */}
-      {loading && <div className="spin"></div>}
       {!loading && (
         <>
           <Hello />

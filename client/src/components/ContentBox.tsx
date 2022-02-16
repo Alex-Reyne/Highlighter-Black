@@ -23,8 +23,6 @@ export default function ContentBox({ edit, setEdit }: props) {
 		getImage(setImage);
 	}, []);
 
-	console.log(image)
-
 	const { REACT_APP_IMGBB } = process.env;
 
 	return (
@@ -71,8 +69,7 @@ export default function ContentBox({ edit, setEdit }: props) {
 				</section>
 				<section>
 					<label htmlFor='file-input'>
-						{/* <img id='img' src={image} alt='user_image' /> */}
-						<p>{image}</p>
+						<img id='img' src={image} alt='user_image' />
 					</label>
 
 					<input

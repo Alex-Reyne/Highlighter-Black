@@ -25,6 +25,7 @@ const newLink = (set, addForm) => {
 };
 
 const resetLinks = (set) => {
+  console.log('in links reset HELPER FRONTEND');
   const id = 2;
   axios
     .post(`https://highlighter-black.herokuapp.com/api/users/resetLinks/${id}`)

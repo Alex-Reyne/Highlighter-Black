@@ -32,6 +32,7 @@ async function getImage(setImage) {
 }
 
 const resetImage = (setImage) => {
+  console.log('in reset IMAGE HELPER FRONTEND');
   const url = `https://i.ibb.co/zmJypD9/stars.gif`;
   await axios
     .post('https://highlighter-black.herokuapp.com/api/users/2/newimage', {

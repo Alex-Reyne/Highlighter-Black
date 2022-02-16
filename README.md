@@ -1,46 +1,18 @@
-# Getting Started with Create React App
+<title>Highlighter Black</title>
+<meta name="description" content="Highlighter Black Start Page" />
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Highlighter Black
 
-## Available Scripts
+Highlighter Black is a custom start/new-tab page built as a chrome extention. You can upload custom images/gifs to play in the image box and add or delete custom links in the main content container. It also features a Duck Duck Go search bar with a slim, unintrusive design.
 
-In the project directory, you can run:
+Highlighter Black uses React-Typescript for the frontend client-side rendering
 
-### `npm start`
+It also uses a Node with Express.js and Typescript for the backend and a PostgreSQL Database all deployed to Heroku.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+You can view a live demo version that's been deployed to Vercel here [Highlighter Black](https://highlighter-black.vercel.app/)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The demo resets the user image and links in the database every 5 minutes to keep it clean for future visitors so don't worry about messing anything up 😊
 
-### `npm test`
+# Preview
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+![highlighter black demo video](client/public/images/highlighter-black-demo.mp4)

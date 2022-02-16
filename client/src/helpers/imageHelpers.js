@@ -17,7 +17,7 @@ async function submitImage(e, setImage, key) {
 					id: 1,
 					image_url: url,
 				})
-				.then(res2 => setImage(url));
+				.then(res2 => setImage(res.data));
 		})
 		.catch(e => console.log(e));
 }

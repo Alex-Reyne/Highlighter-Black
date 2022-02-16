@@ -71,7 +71,8 @@ export default function ContentBox({ edit, setEdit }: props) {
 				</section>
 				<section>
 					<label htmlFor='file-input'>
-						<img id='img' src={image} alt='user_image' />
+						{/* <img id='img' src={image} alt='user_image' /> */}
+						<p>{image}</p>
 					</label>
 
 					<input

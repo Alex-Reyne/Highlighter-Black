@@ -36,16 +36,16 @@ export default function ContentBox({ edit, setEdit, loading, setLoading }: props
       .catch(console.error);
   }, []);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      resetImage(setImage);
-      resetLinks(setLinks);
-    }, 1 * 60000);
+  // useEffect(() => {
+  //   const timer = setInterval(() => {
+  //     resetImage(setImage);
+  //     resetLinks(setLinks);
+  //   }, 1 * 60000);
 
-    return () => {
-      clearInterval(timer);
-    };
-  }, [image, links]);
+  //   return () => {
+  //     clearInterval(timer);
+  //   };
+  // }, [image, links]);
 
   const { REACT_APP_IMGBB } = process.env;
 

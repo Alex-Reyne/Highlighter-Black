@@ -38,6 +38,10 @@ export default function ContentBox({ edit, setEdit, loading, setLoading }: props
 
   const { REACT_APP_IMGBB } = process.env;
 
+  const reset = (e: any) => {
+    e.target.reset();
+  };
+
   return (
     <section className="main-content">
       {!loading && (
@@ -95,6 +99,7 @@ export default function ContentBox({ edit, setEdit, loading, setLoading }: props
             action="https://duckduckgo.com/?q="
             target="_blank"
             method="get"
+            onSubmit={(e) => reset(e)}
           >
             <input type="text" placeholder="Duck Duck Go Search..." name="q" />
           </form>

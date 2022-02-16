@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const getLinks = async (set) => {
   try {
-    const res = await axios.get(`https://highlighter-black.herokuapp.com/api/users/1/links`);
+    const res = await axios.get(`https://highlighter-black.herokuapp.com/api/users/2/links`);
     set((prev) => [...res.data]);
   } catch (err) {
     console.log(err);

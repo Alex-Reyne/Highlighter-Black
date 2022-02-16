@@ -10,6 +10,7 @@ async function submitImage(e, setImage, key) {
 		data: data,
 	})
 		.then(res => {
+			console.log(res)
 			const url = res.data.data.url;
 			axios
 				.post('https://highlighter-black.herokuapp.com/api/users/1/newimage', {

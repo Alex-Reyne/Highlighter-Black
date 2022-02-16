@@ -10,7 +10,7 @@ async function submitImage(e, setImage, key) {
 		data: data,
 	})
 		.then(res => {
-			const url = res.data.data.display_url;
+			const url = res.data.data.url;
 			axios
 				.post('http://localhost:5001/api/users/1/newimage', {
 					id: 1,

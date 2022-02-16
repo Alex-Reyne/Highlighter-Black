@@ -39,6 +39,7 @@ export default function ContentBox({ edit, setEdit, loading, setLoading }: props
   const { REACT_APP_IMGBB } = process.env;
 
   const reset = (e: any) => {
+    e.preventDefault();
     e.target.reset();
   };
 

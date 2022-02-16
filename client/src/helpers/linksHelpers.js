@@ -9,8 +9,8 @@ const getLinks = async (set) => {
   }
 };
 
-const newLink = (set, addForm) => {
-  axios
+async function newLink(set, addForm) {
+  await axios
     .post(`https://highlighter-black.herokuapp.com/api/users/newlink`, {
       name: `${addForm.name}`,
       url: `${addForm.url}`,
@@ -22,7 +22,7 @@ const newLink = (set, addForm) => {
     .catch((err) => {
       console.log(err);
     });
-};
+}
 
 const resetLinks = (set) => {
   console.log('in links reset HELPER FRONTEND');

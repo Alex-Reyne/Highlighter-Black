@@ -80,11 +80,7 @@ router.post('/deletelink/:id', (req: Request, res: Response) => {
     );
 });
 
-<<<<<<< HEAD
-// Delete ALL Links
-=======
 // reset ALL Links
->>>>>>> production
 router.post('/resetLinks/:id', (req: Request, res: Response) => {
   resetLinks(req.params.id)
     .then((link: JSON) => {

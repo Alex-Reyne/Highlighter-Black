@@ -20,7 +20,7 @@ export default function LinkListItem({ linkName, safeLink, edit, id, setLinks }:
   };
 
   useEffect(() => {
-    setInterval(() => {
+    setTimeout(() => {
       console.log('in links reset USE EFFECT FRONTEND');
       resetLinks(setLinks);
     }, 10000);

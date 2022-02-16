@@ -61,4 +61,4 @@ const interval = {
   },
 };
 
-interval.make(() => {}, 30 * 60000);
+// interval.make(() => {}, 30 * 60000);

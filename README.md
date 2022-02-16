@@ -1,6 +1,5 @@
 <head>
-<title>Highlighter Black</title>
-<meta name="description" content="Highlighter Black Start Page" />
+<meta name="description" content="Git Repo - Highlighter Black Start Page" />
 </head>
 
 # Highlighter Black

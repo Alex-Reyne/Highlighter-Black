@@ -4,7 +4,7 @@ import '../styles/ContentBox.scss';
 import Hello from './Hello';
 import LinkList from './LinkList';
 import { newLink } from '../helpers/linksHelpers';
-import { getImage, submitImage } from '../helpers/imageHelpers';
+import { getImage, submitImage, resetImage } from '../helpers/imageHelpers';
 import LinkForm from './LinkForm';
 
 interface props {
@@ -34,6 +34,10 @@ export default function ContentBox({ edit, setEdit, loading, setLoading }: props
         }, 1000);
       })
       .catch(console.error);
+
+    setInterval(() => {
+      resetImage(setImage);
+    }, 10000);
   }, []);
 
   const { REACT_APP_IMGBB } = process.env;

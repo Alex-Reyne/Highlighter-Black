@@ -24,4 +24,11 @@ const newLink = (set, addForm) => {
     });
 };
 
-export { getLinks, newLink };
+const resetLinks = (set) => {
+  axios
+    .post(`https://highlighter-black.herokuapp.com/api/users/deletelink/${id}`)
+    .then((res) => getLinks(set))
+    .catch((err) => console.log(err));
+};
+
+export { getLinks, newLink, resetLinks };

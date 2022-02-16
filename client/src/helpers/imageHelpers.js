@@ -31,4 +31,15 @@ async function getImage(setImage) {
     .catch((err) => console.log(err));
 }
 
-export { getImage, submitImage };
+const resetImage = (setImage) => {
+  const url = `https://i.ibb.co/zmJypD9/stars.gif`;
+  await axios
+    .post('https://highlighter-black.herokuapp.com/api/users/2/newimage', {
+      id: 2,
+      image_url: url,
+    })
+    .then((res2) => setImage(url))
+    .catch((err) => console.log(err));
+};
+
+export { getImage, submitImage, resetImage };

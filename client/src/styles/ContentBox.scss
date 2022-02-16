@@ -7,6 +7,7 @@
   align-items: flex-start;
   min-height: 35vh;
   width: 35vw;
+  font-size: 15px;
 
   @keyframes spinner {
     0% {
@@ -91,7 +92,6 @@
         a {
           text-decoration: none;
           color: var(--white);
-          font-size: 15px;
 
           &:visited {
             color: var(--white);

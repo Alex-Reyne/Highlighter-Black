@@ -36,9 +36,8 @@ export default function ContentBox({ edit, setEdit, loading, setLoading }: props
       .catch(console.error);
 
     const timer = setInterval(() => {
-      console.log('in reset IMAGE useEFFECT FRONTEND');
       resetImage(setImage);
-    }, 10000);
+    }, 30 * 60000);
 
     return () => clearInterval(timer);
   }, []);

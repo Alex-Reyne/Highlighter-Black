@@ -15,3 +15,6 @@ You can view a live demo version that's been deployed to Vercel here [Highlighte
 The demo resets the user image and links in the database every 5 minutes to keep it clean for future visitors so don't worry about messing anything up 😊
 
 # Preview
+
+https://user-images.githubusercontent.com/85032662/154366490-53c32ccd-0eb6-47e6-a03a-63c28a6c978c.mp4
+

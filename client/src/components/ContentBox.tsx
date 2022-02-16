@@ -23,6 +23,8 @@ export default function ContentBox({ edit, setEdit }: props) {
 		getImage(setImage);
 	}, []);
 
+	console.log(image)
+
 	const { REACT_APP_IMGBB } = process.env;
 
 	return (

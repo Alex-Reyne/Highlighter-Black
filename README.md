@@ -8,7 +8,7 @@ Highlighter Black is a personal custom start/new-tab page built as a chrome exte
 
 ---
 
-Highlighter Black uses React-Typescript for the frontend client-side rendering
+Highlighter Black uses React-Typescript for the frontend client-side rendering deployed to Vercel.
 
 It also uses a Node with Express.js and Typescript for the backend and a PostgreSQL Database all deployed to Heroku.
 
